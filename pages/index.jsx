@@ -1,64 +1,75 @@
-import useDemoModal from '@/components/modal/DemoModal';
-import useWindowSize from '@/hooks/useWindowSize';
-import useScrollbar from '@/hooks/useScrollbar';
-import useElementSize from '@/hooks/useElementSize';
-import useLockedScroll from '@/hooks/useLockedScroll';
-import useWindowLocation from '@/hooks/useWindowLocation';
-import useIsMounted from '@/hooks/useIsMounted';
-import MetaData from '@/components/MetaData';
-import HeaderBasic from '@/components/HeaderBasic';
-import Button from '@/components/Button';
-import TranslateInOut from '@/components/gsap/TranslateInOut';
-import ShuffleTextInOut from '@/components/gsap/ShuffleTextInOut';
-import RotateInOut3D from '@/components/gsap/RotateInOut3D';
+import useDemoModal from "@/components/modal/DemoModal";
+import useWindowSize from "@/hooks/useWindowSize";
+import useScrollbar from "@/hooks/useScrollbar";
+import useElementSize from "@/hooks/useElementSize";
+import useLockedScroll from "@/hooks/useLockedScroll";
+import useWindowLocation from "@/hooks/useWindowLocation";
+import useIsMounted from "@/hooks/useIsMounted";
+import MetaData from "@/components/MetaData";
+import HeaderBasic from "@/components/HeaderBasic";
+import Button from "@/components/Button";
+import TranslateInOut from "@/components/gsap/TranslateInOut";
+import ShuffleTextInOut from "@/components/gsap/ShuffleTextInOut";
+import RotateInOut3D from "@/components/gsap/RotateInOut3D";
+import { useState } from "react";
+
+const TEAM = [
+    {
+        name: "Chibundu Precious Mozia",
+        bio: "lorem ipsum dolor amett....",
+        image: "static/mozia.jpeg",
+    },
+    {
+        name: "Apoh Prince Eldrige",
+        bio: "lorem ipsum dolor amett....",
+        image: "static/apoh-eldrige.jpeg",
+    },
+    {
+        name: "Linda Clovis",
+        bio: "lorem ipsum dolor amett....",
+        image: "static/linda.jpeg",
+    },
+];
 
 export default function Home() {
     const { DemoModal, setModal } = useDemoModal();
-    const { windowSize, isMobile, isDesktop } = useWindowSize();
-    const { scrollY, directionY } = useScrollbar();
+    const [activeMember, setActiveMember] = useState("");
     const [sectionRef, size] = useElementSize();
-    const [locked, setLocked] = useLockedScroll(false);
-    const { currentURL } = useWindowLocation();
-    const isMounted = useIsMounted();
 
     return (
         <>
             <MetaData />
             <HeaderBasic
-                title="Next.js starter"
-                wysiwyg="A collection of reusable components, hooks, and utilities to build amazing projects with complex animations and page transitions using GSAP."
+                title="Dreamville"
+                wysiwyg="A comprehensive presentation of dreamville's e-lab challenges."
                 button={{
-                    label: 'Powered by Next.js',
-                    href: '',
+                    label: "Powered by Dreamville",
+                    href: "",
                     isExternal: true,
-                    externalHref: 'https://nextjs.org/',
-                    anchor: '',
-                    onClick: '',
-                    className: 'c-btn'
+                    // externalHref: "https://nextjs.org/",
+                    anchor: "",
+                    onClick: "",
+                    className: "c-btn",
                 }}
             />
             <section className="c-flexSection u-spacing--responsive--bottom">
                 <div className="o-container--small">
-                    <ShuffleTextInOut
-                        delay={0.3}
-                        target="#components"
-                    >
-                        <h2 id="components">Components</h2>
+                    <ShuffleTextInOut delay={0.3} target="#components">
+                        <h2 id="components">Challenges</h2>
                     </ShuffleTextInOut>
-                    <TranslateInOut
-                        overflowHidden
-                        delay={0.4}
-                        y="100%"
-                    >
+                    <TranslateInOut overflowHidden delay={0.4} y="100%">
                         <div className="o-wysiwyg">
-                            <p>This starter includes complete navigation with different states (open, sticky, hidden...) and reusable components like modal, accordion, button, form elements and more. Check out the components folder.</p>
+                            <p>
+                                Find below the links to all of the challenges
+                                dreamville took part of.
+                            </p>
                         </div>
                     </TranslateInOut>
                     <div className="c-flexSection__row">
                         <div className="c-flexSection__item">
                             <DemoModal
-                                title="Demo modal"
-                                content="Beautiful, reusable modal animated using GSAP."
+                                title={activeMember.name}
+                                content={activeMember.bio}
                             />
                             <TranslateInOut
                                 delay={0.25}
@@ -68,7 +79,7 @@ export default function Home() {
                                 watch
                             >
                                 <Button
-                                    label="Modal"
+                                    label="Challenge One"
                                     onClick={() => setModal(true)}
                                     className="c-btn"
                                 />
@@ -83,7 +94,7 @@ export default function Home() {
                                 watch
                             >
                                 <Button
-                                    label="GSAP"
+                                    label="Challenge Two"
                                     href="/gsap"
                                     className="c-btn"
                                 />
@@ -98,7 +109,7 @@ export default function Home() {
                                 watch
                             >
                                 <Button
-                                    label="Accordion"
+                                    label="Challenge Three"
                                     href="/accordion"
                                     className="c-btn"
                                 />
@@ -113,7 +124,7 @@ export default function Home() {
                                 watch
                             >
                                 <Button
-                                    label="Form"
+                                    label="Challenge Four"
                                     href="/form"
                                     className="c-btn"
                                 />
@@ -128,7 +139,7 @@ export default function Home() {
                                 watch
                             >
                                 <Button
-                                    label="File upload form"
+                                    label="Challenge Five"
                                     href="/upload"
                                     className="c-btn"
                                 />
@@ -137,14 +148,13 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="c-gridSection u-spacing--responsive--bottom" ref={sectionRef}>
+            <section
+                className="c-gridSection u-spacing--responsive--bottom"
+                ref={sectionRef}
+            >
                 <div className="o-container--small">
-                    <ShuffleTextInOut
-                        delay={0.3}
-                        target="#hooks"
-                        watch
-                    >
-                        <h2 id="hooks">Hooks</h2>
+                    <ShuffleTextInOut delay={0.3} target="#hooks" watch>
+                        <h2 id="hooks">Dreamville Team</h2>
                     </ShuffleTextInOut>
                     <TranslateInOut
                         overflowHidden
@@ -155,63 +165,45 @@ export default function Home() {
                         watch
                     >
                         <div className="o-wysiwyg">
-                            <p>Simple and usefull React hooks, ready to use.</p>
+                            <p>(Click on any team member to learn more ... )</p>
                         </div>
                     </TranslateInOut>
                     <div className="c-gridSection__row">
-                        <RotateInOut3D
-                            durationIn={1 + Math.random()}
-                            y="265px"
-                            start= "-265px 90%"
-                            end= "-265px top"
-                            watch
-                        >
-                            <div className="c-gridSection__item">
-                                <h3 className="h5">useWindowSize</h3>
+                        {TEAM?.map((member, index) => (
+                            <RotateInOut3D
+                                key={index}
+                                durationIn={1 + Math.random()}
+                                y="265px"
+                                start="-265px 90%"
+                                end="-265px top"
+                                watch
+                            >
+                                <div
+                                    style={{ cursor: "pointer" }}
+                                    className="c-gridSection__item"
+                                    onClick={() => {
+                                        setActiveMember(member);
+                                        setModal(true);
+                                    }}
+                                >
+                                    <img src={member.image} />
+
+                                    {/* <h3 className="h5">useWindowSize</h3>
                                 <div className="o-wysiwyg">
                                     <p>Width: {windowSize.width}</p>
                                     <p>Height: {windowSize.height}</p>
                                     <p>isMobile: {String(isMobile)}</p>
                                     <p>isDesktop: {String(isDesktop)}</p>
+                                </div> */}
                                 </div>
-                            </div>
-                        </RotateInOut3D>
-                        <RotateInOut3D
+                            </RotateInOut3D>
+                        ))}
+
+                        {/* <RotateInOut3D
                             durationIn={1 + Math.random()}
                             y="265px"
-                            start= "-265px 90%"
-                            end= "-265px top"
-                            watch
-                        >
-                            <div className="c-gridSection__item">
-                                <h3 className="h5">useScrollbar</h3>
-                                <div className="o-wysiwyg">
-                                    <p>scrollY: {scrollY}</p>
-                                    <p>directionY: {directionY}</p>
-                                </div>
-                            </div>
-                        </RotateInOut3D>
-                        <RotateInOut3D
-                            durationIn={1 + Math.random()}
-                            y="265px"
-                            start= "-265px 90%"
-                            end= "-265px top"
-                            watch
-                        >
-                            <div className="c-gridSection__item">
-                                <h3 className="h5">useElementSize</h3>
-                                <div className="o-wysiwyg">
-                                    <p>E.g. sectionRef</p>
-                                    <p>Width: {size.width}</p>
-                                    <p>Height: {size.height}</p>
-                                </div>
-                            </div>
-                        </RotateInOut3D>
-                        <RotateInOut3D
-                            durationIn={1 + Math.random()}
-                            y="265px"
-                            start= "-265px 90%"
-                            end= "-265px top"
+                            start="-265px 90%"
+                            end="-265px top"
                             watch
                         >
                             <div className="c-gridSection__item">
@@ -219,7 +211,11 @@ export default function Home() {
                                 <div className="o-wysiwyg">
                                     <p>Locked: {String(locked)}</p>
                                     <Button
-                                        label={locked ? 'Unlock scroll' : 'Lock scroll'}
+                                        label={
+                                            locked
+                                                ? "Unlock scroll"
+                                                : "Lock scroll"
+                                        }
                                         onClick={() => setLocked(!locked)}
                                         className="c-btn"
                                     />
@@ -229,8 +225,8 @@ export default function Home() {
                         <RotateInOut3D
                             durationIn={1 + Math.random()}
                             y="265px"
-                            start= "-265px 90%"
-                            end= "-265px top"
+                            start="-265px 90%"
+                            end="-265px top"
                             watch
                         >
                             <div className="c-gridSection__item">
@@ -243,8 +239,8 @@ export default function Home() {
                         <RotateInOut3D
                             durationIn={1 + Math.random()}
                             y="265px"
-                            start= "-265px 90%"
-                            end= "-265px top"
+                            start="-265px 90%"
+                            end="-265px top"
                             watch
                         >
                             <div className="c-gridSection__item">
@@ -253,10 +249,10 @@ export default function Home() {
                                     <p>isMounted: {String(isMounted())}</p>
                                 </div>
                             </div>
-                        </RotateInOut3D>
+                        </RotateInOut3D> */}
                     </div>
                 </div>
             </section>
         </>
-    )
+    );
 }
