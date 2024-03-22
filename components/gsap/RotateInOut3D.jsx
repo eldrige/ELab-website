@@ -1,8 +1,8 @@
-import gsap from 'gsap';
-import { useRef } from 'react';
-import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
-import useTransitionContext from '@/context/transitionContext';
-import { randomNumber } from '@/utils/number';
+import gsap from "gsap";
+import { useRef } from "react";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
+import useTransitionContext from "../../context/transitionContext";
+import { randomNumber } from "../../utils/number";
 
 export default function RotateInOut3D({
     children,
@@ -10,30 +10,32 @@ export default function RotateInOut3D({
     durationOut = 0.25,
     delay = 0,
     delayOut = 0,
-    ease = 'power4.inOut',
-    easeOut = 'power4.out',
+    ease = "power4.inOut",
+    easeOut = "power4.out",
     x = 0,
     y = 0,
     skipOutro,
     watch = false,
-    start = 'top bottom',
-    end = 'bottom top',
+    start = "top bottom",
+    end = "bottom top",
     scrub = false,
-    markers
+    markers,
 }) {
     const { timeline } = useTransitionContext();
     const element = useRef();
 
     useIsomorphicLayoutEffect(() => {
-        const scrollTrigger = watch ? {
-            scrollTrigger: {
-                trigger: element.current,
-                start,
-                end,
-                scrub,
-                markers: markers
-            }
-        } : {};
+        const scrollTrigger = watch
+            ? {
+                  scrollTrigger: {
+                      trigger: element.current,
+                      start,
+                      end,
+                      scrub,
+                      markers: markers,
+                  },
+              }
+            : {};
 
         const ctx = gsap.context(() => {
             /* Intro animation */
@@ -46,7 +48,7 @@ export default function RotateInOut3D({
                     rotationY: randomNumber(-40, 40),
                     rotationZ: randomNumber(-10, 10),
                     scale: 0.8,
-                    opacity: 0
+                    opacity: 0,
                 },
                 {
                     x: 0,
@@ -59,27 +61,24 @@ export default function RotateInOut3D({
                     ease,
                     delay,
                     duration: durationIn,
-                    ...scrollTrigger
+                    ...scrollTrigger,
                 }
             );
 
             /* Outro animation */
             if (!skipOutro) {
                 timeline.add(
-                    gsap.to(
-                        element.current,
-                        {
-                            x,
-                            y,
-                            rotationX: randomNumber(-80, 80),
-                            rotationY: randomNumber(-40, 40),
-                            rotationZ: randomNumber(-10, 10),
-                            opacity: 0,
-                            ease: easeOut,
-                            delay: delayOut,
-                            duration: durationOut
-                        }
-                    ),
+                    gsap.to(element.current, {
+                        x,
+                        y,
+                        rotationX: randomNumber(-80, 80),
+                        rotationY: randomNumber(-40, 40),
+                        rotationZ: randomNumber(-10, 10),
+                        opacity: 0,
+                        ease: easeOut,
+                        delay: delayOut,
+                        duration: durationOut,
+                    }),
                     0
                 );
             }
@@ -92,4 +91,4 @@ export default function RotateInOut3D({
             {children}
         </div>
     );
-};
+}

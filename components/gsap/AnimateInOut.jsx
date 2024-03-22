@@ -1,7 +1,7 @@
-import gsap from 'gsap';
-import React, { useRef } from 'react';
-import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
-import useTransitionContext from '@/context/transitionContext';
+import gsap from "gsap";
+import React, { useRef } from "react";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
+import useTransitionContext from "../../context/transitionContext";
 
 function AnimateInOut({
     children,
@@ -16,30 +16,31 @@ function AnimateInOut({
     start,
     end,
     scrub,
-    markers
+    markers,
 }) {
     const { timeline } = useTransitionContext();
     const element = useRef();
 
     useIsomorphicLayoutEffect(() => {
-        const scrollTrigger = watch ? {
-            scrollTrigger: {
-                trigger: element.current,
-                start,
-                end,
-                scrub,
-                markers: markers
-            }
-        } : {};
+        const scrollTrigger = watch
+            ? {
+                  scrollTrigger: {
+                      trigger: element.current,
+                      start,
+                      end,
+                      scrub,
+                      markers: markers,
+                  },
+              }
+            : {};
 
         const ctx = gsap.context(() => {
-
             /* Intro animation */
             gsap.to(element.current, {
                 ...to,
                 delay,
                 duration: durationIn,
-                ...scrollTrigger
+                ...scrollTrigger,
             });
 
             /* Outro animation */
@@ -48,7 +49,7 @@ function AnimateInOut({
                     gsap.to(element.current, {
                         ...from,
                         delay: delayOut,
-                        duration: durationOut
+                        duration: durationOut,
                     }),
                     0
                 );
@@ -61,7 +62,7 @@ function AnimateInOut({
         <div ref={element} style={from}>
             {children}
         </div>
-    )
+    );
 }
 
 export default React.memo(AnimateInOut);

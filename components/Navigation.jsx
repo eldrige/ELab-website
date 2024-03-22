@@ -1,9 +1,9 @@
-import styles from "@/styles/modules/Navigation.module.scss";
+import styles from "../styles/modules/Navigation.module.scss";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import useNavigationContext from "@/context/navigationContext";
-import useElementSize from "@/hooks/useElementSize";
-import useIsMounted from "@/hooks/useIsMounted";
+import useNavigationContext from "../context/navigationContext";
+import useElementSize from "../hooks/useElementSize";
+import useIsMounted from "../hooks/useIsMounted";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import Logo from "./icons/Logo";
 import MobileNavigation from "./MobileNavigation";

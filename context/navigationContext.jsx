@@ -1,15 +1,15 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import useScrollbar from '@/hooks/useScrollbar';
-import useWindowSize from '@/hooks/useWindowSize';
-import useLockedScroll from '@/hooks/useLockedScroll';
+import { createContext, useContext, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import useScrollbar from "../hooks/useScrollbar";
+import useWindowSize from "../hooks/useWindowSize";
+import useLockedScroll from "../hooks/useLockedScroll";
 
 const NavigationContext = createContext({
     open: false,
     sticky: false,
     hidden: false,
     setOpen: () => {},
-    toggle: () => {}
+    toggle: () => {},
 });
 
 export function NavigationContextProvider({ children }) {
@@ -33,7 +33,7 @@ export function NavigationContextProvider({ children }) {
             setIsOpen(false);
             setLocked(false);
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isDesktop]);
 
     /**
@@ -44,7 +44,7 @@ export function NavigationContextProvider({ children }) {
             setIsOpen(false);
             setLocked(false);
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [router.asPath]);
 
     return (
@@ -56,13 +56,13 @@ export function NavigationContextProvider({ children }) {
                 setIsOpen,
                 sticky: scrollY > 0,
                 hidden: directionY > 0 && scrollY > windowSize.height,
-                toggle
+                toggle,
             }}
         >
             {children}
         </NavigationContext.Provider>
     );
-};
+}
 
 export default function useNavigationContext() {
     return useContext(NavigationContext);

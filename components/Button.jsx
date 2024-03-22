@@ -1,6 +1,6 @@
-import styles from '@/styles/modules/Button.module.scss';
-import Link from 'next/link';
-import Circle from './icons/Circle';
+import styles from "../styles/modules/Button.module.scss";
+import Link from "next/link";
+import Circle from "./icons/Circle";
 
 export default function Button({
     label,
@@ -8,13 +8,12 @@ export default function Button({
     isExternal,
     externalHref,
     anchor,
-    type="button",
+    type = "button",
     onClick,
     disabled,
     className,
-    wrapperClassName
+    wrapperClassName,
 }) {
-
     if (label && href) {
         return (
             <div className={wrapperClassName}>
@@ -29,13 +28,13 @@ export default function Button({
         );
     }
 
-    if (label && (isExternal && externalHref || anchor)) {
+    if (label && ((isExternal && externalHref) || anchor)) {
         return (
             <div className={wrapperClassName}>
                 <a
                     className={styles[className]}
-                    target={isExternal ? '_blank' : false}
-                    rel={isExternal ? 'noopener noreferrer' : false}
+                    target={isExternal ? "_blank" : false}
+                    rel={isExternal ? "noopener noreferrer" : false}
                     href={externalHref ? externalHref : `#${anchor}`}
                 >
                     {label}
@@ -54,7 +53,7 @@ export default function Button({
                     disabled={disabled}
                 >
                     {disabled && <Circle />}
-                    {disabled ? 'Sending...' : label}
+                    {disabled ? "Sending..." : label}
                 </button>
             </div>
         );

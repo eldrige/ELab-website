@@ -1,9 +1,9 @@
-import gsap from 'gsap';
-import { useRef } from 'react';
-import { useRouter } from 'next/router';
-import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
-import Link from 'next/link';
-import classNames from 'classnames';
+import gsap from "gsap";
+import { useRef } from "react";
+import { useRouter } from "next/router";
+import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
+import Link from "next/link";
+import classNames from "classnames";
 
 export default function NavItem({
     href,
@@ -13,24 +13,23 @@ export default function NavItem({
     overflowHidden,
     durationIn = 0.35,
     delay = 0.5,
-    ease = 'sine.out',
+    ease = "sine.out",
     rotate = 0,
     scale = 1,
     x = 0,
-    y = 0
+    y = 0,
 }) {
     const router = useRouter();
     const isActive = router.asPath === href;
-    const element = useRef()
+    const element = useRef();
 
     const from = {
         opacity: 0,
-        transform: `translate(${x}, ${y}) rotate(${rotate}deg) scale(${scale})`
-    }
+        transform: `translate(${x}, ${y}) rotate(${rotate}deg) scale(${scale})`,
+    };
 
     useIsomorphicLayoutEffect(() => {
         const ctx = gsap.context(() => {
-
             /* Intro animation */
             gsap.to(element.current, {
                 x: 0,
@@ -39,7 +38,7 @@ export default function NavItem({
                 opacity: 1,
                 ease,
                 delay,
-                duration: durationIn
+                duration: durationIn,
             });
         }, element);
         return () => ctx.revert();
@@ -48,14 +47,14 @@ export default function NavItem({
     return (
         <div
             className={classNames({
-                'u-overflow--hidden': overflowHidden
+                "u-overflow--hidden": overflowHidden,
             })}
         >
             <span ref={element} style={{ ...from }}>
                 <Link
                     href={href}
                     className={classNames({
-                        [className]: isActive
+                        [className]: isActive,
                     })}
                     onClick={onClick}
                 >

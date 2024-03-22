@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react';
-import useNavigationContext from '@/context/navigationContext';
-import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
+import { useEffect, useState } from "react";
+import useNavigationContext from "../context/navigationContext";
+import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
 
-export default function useLockedScroll(
-    initialLocked
-) {
+export default function useLockedScroll(initialLocked) {
     const { ref } = useNavigationContext();
     const [locked, setLocked] = useState(initialLocked);
 
@@ -21,9 +19,9 @@ export default function useLockedScroll(
         const originalHeight = document.body.style.height;
 
         /* Lock body scroll */
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = "hidden";
         document.body.style.height = `${100}vh`;
-        document.body.classList.add('has-scroll-lock');
+        document.body.classList.add("has-scroll-lock");
 
         /* Get the scrollbar width */
         const scrollBarWidth = window.innerWidth - originalDocumentWidth;
@@ -37,13 +35,13 @@ export default function useLockedScroll(
         return () => {
             document.body.style.overflow = originalOverflow;
             document.body.style.height = originalHeight;
-            document.body.classList.remove('has-scroll-lock');
+            document.body.classList.remove("has-scroll-lock");
 
             if (ref && scrollBarWidth) {
                 document.body.style.paddingRight = originalPaddingRight;
                 ref.style.right = 0;
             }
-        }
+        };
     }, [locked]);
 
     /* Update state if initialLocked changes */
@@ -51,7 +49,7 @@ export default function useLockedScroll(
         if (locked !== initialLocked) {
             setLocked(initialLocked);
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [initialLocked]);
 
     return [locked, setLocked];

@@ -1,8 +1,8 @@
-import styles from "@/styles/modules/Footer.module.scss";
+import styles from "../styles/modules/Footer.module.scss";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useRouter } from "next/router";
-import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
+import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
 import NavItem from "./NavItem";
 import classNames from "classnames";
 

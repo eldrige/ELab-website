@@ -1,16 +1,13 @@
-import useDemoModal from "@/components/modal/DemoModal";
-import useWindowSize from "@/hooks/useWindowSize";
-import useScrollbar from "@/hooks/useScrollbar";
-import useElementSize from "@/hooks/useElementSize";
-import useLockedScroll from "@/hooks/useLockedScroll";
-import useWindowLocation from "@/hooks/useWindowLocation";
-import useIsMounted from "@/hooks/useIsMounted";
-import MetaData from "@/components/MetaData";
-import HeaderBasic from "@/components/HeaderBasic";
-import Button from "@/components/Button";
-import TranslateInOut from "@/components/gsap/TranslateInOut";
-import ShuffleTextInOut from "@/components/gsap/ShuffleTextInOut";
-import RotateInOut3D from "@/components/gsap/RotateInOut3D";
+import useDemoModal from "../components/modal/DemoModal";
+
+import useElementSize from "../hooks/useElementSize";
+
+import MetaData from "../components/MetaData";
+import HeaderBasic from "../components/HeaderBasic";
+import Button from "../components/Button";
+import TranslateInOut from "../components/gsap/TranslateInOut";
+import ShuffleTextInOut from "../components/gsap/ShuffleTextInOut";
+import RotateInOut3D from "../components/gsap/RotateInOut3D";
 import { useState } from "react";
 
 const TEAM = [
@@ -30,19 +27,19 @@ const TEAM = [
         image: "static/linda-two.jpeg",
     },
     {
-        name: "Mahoro Kamali Aurore Melissa 🇷🇼",
-        bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
-        image: "static/melissa.jpeg",
-    },
-    {
         name: "Manzi Emmanuel 🇷🇼",
         bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
         image: "static/linda-two.jpeg",
     },
     {
+        name: "Mahoro Kamali Aurore Melissa 🇷🇼",
+        bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
+        image: "static/melissa.jpeg",
+    },
+    {
         name: "Wakhile Zwakele Mzwakhe Dlamini 🇸🇿",
         bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
-        image: "static/linda-two.jpeg",
+        image: "static/ken.jpeg",
     },
 ];
 
