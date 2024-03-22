@@ -8,51 +8,26 @@ import RotateInOut3D from "@/components/gsap/RotateInOut3D";
 import ImplodeExplodeInOut from "@/components/gsap/ImplodeExplodeInOut";
 import ShuffleTextInOut from "@/components/gsap/ShuffleTextInOut";
 
-export default function Gsap() {
+export default function ChallengeOne() {
     return (
         <>
             <MetaData title="Challenge One" />
             <HeaderBasic
                 title="Challenge one"
-                wysiwyg="Discover each dreamville, team member in depth."
+                wysiwyg="Discover each dreamville team member in depth."
             />
             <div className="u-spacing--responsive--bottom">
                 <div className="o-container--small">
                     <ShuffleTextInOut delay={0.3} target="#gsap-usage">
-                        <h2 id="gsap-usage">Usage</h2>
+                        <h2 id="gsap-usage">Description</h2>
                     </ShuffleTextInOut>
                     <TranslateInOut delay={0.4} y="100%">
                         <div className="o-wysiwyg">
                             <p>
-                                A great place to get started with GSAP and React
-                                is to read{" "}
-                                <a
-                                    href="https://greensock.com/react"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    GSAP X React
-                                </a>
-                                ,{" "}
-                                <a
-                                    href="https://greensock.com/react-basics"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Getting Started with GSAP + React
-                                </a>{" "}
-                                and{" "}
-                                <a
-                                    href="https://greensock.com/react-advanced"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    GSAP + React, Advanced Animation Techniques
-                                </a>
-                                . Wrap your component with an animation such as{" "}
-                                <strong>FadeInOut</strong>,{" "}
-                                <strong>TranslateInOut</strong>,{" "}
-                                <strong>ScaleInOut</strong>...
+                                For challenge 01, we were asked to make an
+                                elevator pitch video introducing ourselves by
+                                stating our name, country, interest and a fun
+                                fact about you.
                             </p>
                             <p>
                                 Each animation component has built in
@@ -107,7 +82,7 @@ export default function Gsap() {
             <div className="c-gridSection">
                 <div className="o-container--small">
                     <ShuffleTextInOut delay={0.3} target="#animations" watch>
-                        <h2 id="animations">Animations</h2>
+                        <h2 id="animations">Gallery</h2>
                     </ShuffleTextInOut>
                     <div className="c-gridSection__row">
                         <FadeInOut
@@ -118,16 +93,7 @@ export default function Gsap() {
                         >
                             <div className="c-gridSection__item">
                                 <div className="o-wysiwyg">
-                                    <h3 className="h5">FadeInOut</h3>
-                                    <p>
-                                        durationIn="1.5"
-                                        <br />
-                                        delay="0.4"
-                                        <br />
-                                        ease="slow"
-                                        <br />
-                                        watch
-                                    </p>
+                                    <img src="/static/dreamville.jpeg" />
                                 </div>
                             </div>
                         </FadeInOut>
@@ -141,20 +107,7 @@ export default function Gsap() {
                         >
                             <div className="c-gridSection__item">
                                 <div className="o-wysiwyg">
-                                    <h3 className="h5">TranslateInOut</h3>
-                                    <p>
-                                        durationIn="1.5"
-                                        <br />
-                                        delay="0.4"
-                                        <br />
-                                        y="100%"
-                                        <br />
-                                        start="-100% bottom"
-                                        <br />
-                                        end="top top"
-                                        <br />
-                                        watch
-                                    </p>
+                                    <img src="/static/dreamville-one.jpeg" />
                                 </div>
                             </div>
                         </TranslateInOut>
@@ -169,40 +122,55 @@ export default function Gsap() {
                                 style={{ display: "flex" }}
                             >
                                 <div className="o-wysiwyg">
-                                    <h3 className="h5">ScaleInOut</h3>
-                                    <p>
-                                        durationIn="1"
-                                        <br />
-                                        delay="0.4"
-                                        <br />
-                                        ease="elastic.out"
-                                        <br />
-                                        y="100%"
-                                        <br />
-                                        watch
-                                    </p>
+                                    <img src="/static/dreamville-two.jpeg" />
                                 </div>
                             </div>
                         </ScaleInOut>
+                        <ScaleInOut
+                            durationIn={1}
+                            delay={0.4}
+                            ease="elastic.out"
+                            watch
+                        >
+                            <div
+                                className="c-gridSection__item"
+                                style={{ display: "flex" }}
+                            >
+                                <div className="o-wysiwyg">
+                                    <img src="/static/dreamville-two.jpeg" />
+                                </div>
+                            </div>
+                        </ScaleInOut>
+                        <TranslateInOut
+                            durationIn={1.5}
+                            delay={0.4}
+                            y="100%"
+                            start="-100% bottom"
+                            end="top top"
+                            watch
+                        >
+                            <div className="c-gridSection__item">
+                                <div className="o-wysiwyg">
+                                    <img src="/static/dreamville-five.jpeg" />
+                                </div>
+                            </div>
+                        </TranslateInOut>
+                        <FadeInOut
+                            durationIn={1.5}
+                            delay={0.4}
+                            ease="slow"
+                            watch
+                        >
+                            <div className="c-gridSection__item">
+                                <div className="o-wysiwyg">
+                                    <img src="/static/dreamville-six.jpeg" />
+                                </div>
+                            </div>
+                        </FadeInOut>
                     </div>
-                    <div className="c-gridSection__rotate">
+                    {/* <div className="c-gridSection__rotate">
                         <div className="o-wysiwyg">
-                            <h3 className="h5">RotateInOut</h3>
-                            <p>
-                                fade="false"
-                                <br />
-                                durationIn="0.6"
-                                <br />
-                                rotateTo="360"
-                                <br />
-                                start="bottom bottom"
-                                <br />
-                                end="top top"
-                                <br />
-                                watch
-                                <br />
-                                scrub
-                            </p>
+                            <img src="/static/dreamville-three.jpeg" />
                         </div>
                         <RotateInOut
                             fade={false}
@@ -215,10 +183,11 @@ export default function Gsap() {
                         >
                             <div className="c-gridSection__rotate--box" />
                         </RotateInOut>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <div className="u-spacing--responsive--bottom">
+            <div className="u-spacing--responsive--bottom"></div>
+            {/* <div className="u-spacing--responsive--bottom">
                 <div className="o-container--small">
                     <ShuffleTextInOut
                         delay={0.3}
@@ -323,7 +292,7 @@ export default function Gsap() {
                         </ShuffleTextInOut>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }

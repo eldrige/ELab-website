@@ -28,7 +28,10 @@
         "yup": "^1.0.0"
     },
     "devDependencies": {
-        "sass": "^1.57.1"
+        "@types/node": "20.11.30",
+        "@types/react": "18.2.67",
+        "sass": "^1.57.1",
+        "typescript": "5.4.3"
     },
     "browserslist": [
         "> 5%",

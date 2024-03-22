@@ -15,19 +15,34 @@ import { useState } from "react";
 
 const TEAM = [
     {
-        name: "Chibundu Precious Mozia",
-        bio: "lorem ipsum dolor amett....",
+        name: "Chibundu Precious Mozia 🇳🇬",
+        bio: "I love learning new things and exploring places. Fun fact about me is that I'm a die-hard Messi fan🐐. I bring my powerful communication skills to the team....",
         image: "static/mozia.jpeg",
     },
     {
-        name: "Apoh Prince Eldrige",
-        bio: "lorem ipsum dolor amett....",
+        name: "Apoh Prince Eldrige 🇨🇲",
+        bio: "Passionate about coding and movies, when he is not busy with his work he is hiking. He brings his collaboration and coding skills to dreamville ....",
         image: "static/apoh-eldrige.jpeg",
     },
     {
-        name: "Linda Clovis",
-        bio: "lorem ipsum dolor amett....",
-        image: "static/linda.jpeg",
+        name: "Linda Rakotonarivo Haritiana Clovis 🇲🇬",
+        bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
+        image: "static/linda-two.jpeg",
+    },
+    {
+        name: "Mahoro Kamali Aurore Melissa 🇷🇼",
+        bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
+        image: "static/melissa.jpeg",
+    },
+    {
+        name: "Manzi Emmanuel 🇷🇼",
+        bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
+        image: "static/linda-two.jpeg",
+    },
+    {
+        name: "Wakhile Zwakele Mzwakhe Dlamini 🇸🇿",
+        bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
+        image: "static/linda-two.jpeg",
     },
 ];
 
@@ -80,7 +95,7 @@ export default function Home() {
                             >
                                 <Button
                                     label="Challenge One"
-                                    onClick={() => setModal(true)}
+                                    href="/challenge-one"
                                     className="c-btn"
                                 />
                             </TranslateInOut>
@@ -187,69 +202,9 @@ export default function Home() {
                                     }}
                                 >
                                     <img src={member.image} />
-
-                                    {/* <h3 className="h5">useWindowSize</h3>
-                                <div className="o-wysiwyg">
-                                    <p>Width: {windowSize.width}</p>
-                                    <p>Height: {windowSize.height}</p>
-                                    <p>isMobile: {String(isMobile)}</p>
-                                    <p>isDesktop: {String(isDesktop)}</p>
-                                </div> */}
                                 </div>
                             </RotateInOut3D>
                         ))}
-
-                        {/* <RotateInOut3D
-                            durationIn={1 + Math.random()}
-                            y="265px"
-                            start="-265px 90%"
-                            end="-265px top"
-                            watch
-                        >
-                            <div className="c-gridSection__item">
-                                <h3 className="h5">useLockedScroll</h3>
-                                <div className="o-wysiwyg">
-                                    <p>Locked: {String(locked)}</p>
-                                    <Button
-                                        label={
-                                            locked
-                                                ? "Unlock scroll"
-                                                : "Lock scroll"
-                                        }
-                                        onClick={() => setLocked(!locked)}
-                                        className="c-btn"
-                                    />
-                                </div>
-                            </div>
-                        </RotateInOut3D>
-                        <RotateInOut3D
-                            durationIn={1 + Math.random()}
-                            y="265px"
-                            start="-265px 90%"
-                            end="-265px top"
-                            watch
-                        >
-                            <div className="c-gridSection__item">
-                                <h3 className="h5">useWindowLocation</h3>
-                                <div className="o-wysiwyg">
-                                    <p>currentURL: {currentURL}</p>
-                                </div>
-                            </div>
-                        </RotateInOut3D>
-                        <RotateInOut3D
-                            durationIn={1 + Math.random()}
-                            y="265px"
-                            start="-265px 90%"
-                            end="-265px top"
-                            watch
-                        >
-                            <div className="c-gridSection__item">
-                                <h3 className="h5">useIsMounted</h3>
-                                <div className="o-wysiwyg">
-                                    <p>isMounted: {String(isMounted())}</p>
-                                </div>
-                            </div>
-                        </RotateInOut3D> */}
                     </div>
                 </div>
             </section>
