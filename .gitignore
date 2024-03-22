@@ -11,9 +11,9 @@
 .pnp.js
 
 # Package manager
-package-lock.json
-yarn.lock
-.npmrc
+# package-lock.json
+# yarn.lock
+# .npmrc
 
 # Misc
 *.pem
