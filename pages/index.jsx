@@ -33,7 +33,7 @@ const TEAM = [
     },
     {
         name: "Mahoro Kamali Aurore Melissa 🇷🇼",
-        bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
+        bio: "I am Mahoro Kamali Aurore Melissa , I am from Rwanda , fun fact about me I like learning how to cook and what I bring to team work and collaboration with the team.....",
         image: "static/melissa.jpeg",
     },
     {
