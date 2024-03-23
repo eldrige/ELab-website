@@ -4,6 +4,7 @@ import TranslateInOut from "./gsap/TranslateInOut";
 import ScaleInOut from "./gsap/ScaleInOut";
 import ImplodeExplodeInOut from "./gsap/ImplodeExplodeInOut";
 import classNames from "classnames";
+import Typewriter from "./gsap/TypeWritter";
 
 export default function HeaderBasic({ title, wysiwyg, button, className }) {
     return (
@@ -22,9 +23,10 @@ export default function HeaderBasic({ title, wysiwyg, button, className }) {
                                 styles["c-headerBasic__row"]
                             )}
                         >
-                            <ImplodeExplodeInOut delay={0.5} target="#title">
-                                <h1 id="title">{title}</h1>
-                            </ImplodeExplodeInOut>
+                            {/* <ImplodeExplodeInOut delay={0.5} target="#title">
+                                <h1 id="title">{title}</h1> */}
+                            <Typewriter text={title} speed={100} />
+                            {/* </ImplodeExplodeInOut> */}
                             <TranslateInOut overflowHidden delay={0.7} y="100%">
                                 <div className="o-wysiwyg">
                                     <p>{wysiwyg}</p>
