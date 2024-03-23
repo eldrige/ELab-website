@@ -1,7 +1,5 @@
 import useDemoModal from "../components/modal/DemoModal";
-
 import useElementSize from "../hooks/useElementSize";
-
 import MetaData from "../components/MetaData";
 import HeaderBasic from "../components/HeaderBasic";
 import Button from "../components/Button";
