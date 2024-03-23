@@ -1,9 +1,9 @@
-import MetaData from "@/components/MetaData";
-import HeaderBasic from "@/components/HeaderBasic";
-import Accordion from "@/components/accordion/Accordion";
-import AccordionItem from "@/components/accordion/AccordionItem";
-import ShuffleTextInOut from "@/components/gsap/ShuffleTextInOut";
-import TranslateInOut from "@/components/gsap/TranslateInOut";
+import MetaData from "../components/MetaData";
+import HeaderBasic from "../components/HeaderBasic";
+import Accordion from "../components/accordion/Accordion";
+import AccordionItem from "../components/accordion/AccordionItem";
+import ShuffleTextInOut from "../components/gsap/ShuffleTextInOut";
+import TranslateInOut from "../components/gsap/TranslateInOut";
 
 const solution = [
     {

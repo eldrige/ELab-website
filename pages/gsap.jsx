@@ -1,12 +1,13 @@
-import MetaData from "@/components/MetaData";
-import HeaderBasic from "@/components/HeaderBasic";
-import FadeInOut from "@/components/gsap/FadeInOut";
-import TranslateInOut from "@/components/gsap/TranslateInOut";
-import ScaleInOut from "@/components/gsap/ScaleInOut";
-import RotateInOut from "@/components/gsap/RotateInOut";
-import RotateInOut3D from "@/components/gsap/RotateInOut3D";
-import ImplodeExplodeInOut from "@/components/gsap/ImplodeExplodeInOut";
-import ShuffleTextInOut from "@/components/gsap/ShuffleTextInOut";
+import MetaData from "../components/MetaData";
+import HeaderBasic from "../components/HeaderBasic";
+import FadeInOut from "../components/gsap/FadeInOut";
+import TranslateInOut from "../components/gsap/TranslateInOut";
+import ScaleInOut from "../components/gsap/ScaleInOut";
+import RotateInOut from "../components/gsap/RotateInOut";
+import RotateInOut3D from "../components/gsap/RotateInOut3D";
+import ImplodeExplodeInOut from "../components/gsap/ImplodeExplodeInOut";
+import ShuffleTextInOut from "../components/gsap/ShuffleTextInOut";
+("");
 
 export default function Gsap() {
     return (

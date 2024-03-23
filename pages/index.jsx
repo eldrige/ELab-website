@@ -29,7 +29,7 @@ const TEAM = [
     {
         name: "Manzi Emmanuel 🇷🇼",
         bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
-        image: "static/linda-two.jpeg",
+        image: "static/emmanuel.jpeg",
     },
     {
         name: "Mahoro Kamali Aurore Melissa 🇷🇼",
@@ -38,7 +38,7 @@ const TEAM = [
     },
     {
         name: "Wakhile Zwakele Mzwakhe Dlamini 🇸🇿",
-        bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
+        bio: "I am a basketball player, gamer, animator, graphic designer, writer and music producer. I bring collaborative and supportive skills to my team and always have a possitive world view of any challenges....",
         image: "static/ken.jpeg",
     },
 ];

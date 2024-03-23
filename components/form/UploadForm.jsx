@@ -1,32 +1,32 @@
-import styles from '../../styles/modules/Form.module.scss';
-import 'react-toastify/dist/ReactToastify.css';
-import { useForm } from 'react-hook-form';
-import { useController } from 'react-hook-form';
-import useIsMounted from '@/hooks/useIsMounted';
-import { useTheme } from 'next-themes';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import { uploadSchema } from '@/schemas/uploadForm';
-import { yupResolver } from '@hookform/resolvers/yup';
-import useUnsavedChanges from '@/hooks/useUnsavedChanges';
-import classNames from 'classnames';
-import FormInput from './FormInput';
-import FormFileInput from './FormFileInput';
-import FormTextarea from './FormTextarea';
-import FormRecaptchaNote from './FormRecaptchaNote';
-import Button from '../Button';
-import TranslateInOut from '../gsap/TranslateInOut';
-import FadeInOut from '../gsap/FadeInOut';
-import ScaleInOut from '../gsap/ScaleInOut';
-import { toast, ToastContainer, Zoom } from 'react-toastify';
+import styles from "../../styles/modules/Form.module.scss";
+import "react-toastify/dist/ReactToastify.css";
+import { useForm } from "react-hook-form";
+import { useController } from "react-hook-form";
+import useIsMounted from "../../hooks/useIsMounted";
+import { useTheme } from "next-themes";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { uploadSchema } from "../../schemas/uploadForm";
+import { yupResolver } from "@hookform/resolvers/yup";
+import useUnsavedChanges from "../../hooks/useUnsavedChanges";
+import classNames from "classnames";
+import FormInput from "./FormInput";
+import FormFileInput from "./FormFileInput";
+import FormTextarea from "./FormTextarea";
+import FormRecaptchaNote from "./FormRecaptchaNote";
+import Button from "../Button";
+import TranslateInOut from "../gsap/TranslateInOut";
+import FadeInOut from "../gsap/FadeInOut";
+import ScaleInOut from "../gsap/ScaleInOut";
+import { toast, ToastContainer, Zoom } from "react-toastify";
 
 const labels = {
-    firstname: 'First name',
-    lastname: 'Last name',
-    email: 'Email',
-    resume: 'Resume',
-    coverletter: 'Cover Letter',
-    message: 'Message'
-}
+    firstname: "First name",
+    lastname: "Last name",
+    email: "Email",
+    resume: "Resume",
+    coverletter: "Cover Letter",
+    message: "Message",
+};
 
 async function sendFormData(data, recaptchaToken) {
     const formData = new FormData();
@@ -39,12 +39,12 @@ async function sendFormData(data, recaptchaToken) {
         }
     });
 
-    formData.append('labels', JSON.stringify(labels));
-    formData.append('recaptchaToken', recaptchaToken);
+    formData.append("labels", JSON.stringify(labels));
+    formData.append("recaptchaToken", recaptchaToken);
 
-    return await fetch('/api/uploadform', {
-        method: 'POST',
-        body: formData
+    return await fetch("/api/uploadform", {
+        method: "POST",
+        body: formData,
     });
 }
 
@@ -55,17 +55,17 @@ export default function UploadForm() {
         handleSubmit,
         reset,
         setError,
-        formState: { isSubmitting, errors, isDirty }
+        formState: { isSubmitting, errors, isDirty },
     } = useForm({
         defaultValues: {
-            firstname: '',
-            lastname: '',
-            email: '',
-            resume: '',
-            coverletter: '',
-            message: ''
+            firstname: "",
+            lastname: "",
+            email: "",
+            resume: "",
+            coverletter: "",
+            message: "",
         },
-        resolver: yupResolver(uploadSchema)
+        resolver: yupResolver(uploadSchema),
     });
     const isMounted = useIsMounted();
     const { resolvedTheme } = useTheme();
@@ -79,10 +79,10 @@ export default function UploadForm() {
             isLoading: false,
             autoClose: 3000,
             closeButton: true,
-            draggable: true
-        }
+            draggable: true,
+        };
 
-        const toastId = toast.loading('Your message is on its way !');
+        const toastId = toast.loading("Your message is on its way !");
 
         try {
             const response = await sendFormData(data, recaptchaToken);
@@ -91,55 +91,68 @@ export default function UploadForm() {
 
             if (!response.ok) {
                 /* API returns validation errors, this type of error will not persist with each submission */
-                setError('root.serverError', {
+                setError("root.serverError", {
                     type: response.status,
                 });
                 if (_data.errors) {
                     /* Validation error, expect response to be a JSON response {"field": "error message for that field"} */
-                    for (const [fieldName, errorMessage] of Object.entries(_data.errors)) {
-                        setError(fieldName, {type: 'custom', message: errorMessage});
+                    for (const [fieldName, errorMessage] of Object.entries(
+                        _data.errors
+                    )) {
+                        setError(fieldName, {
+                            type: "custom",
+                            message: errorMessage,
+                        });
                     }
                 }
-                throw new Error(_data.message || 'Form has errors');
+                throw new Error(_data.message || "Form has errors");
             }
 
             toast.update(toastId, {
                 render: _data.message,
-                type: 'success',
-                ...toastConfig
+                type: "success",
+                ...toastConfig,
             });
 
             /* Resets form after success */
             reset();
-
         } catch (error) {
             toast.update(toastId, {
                 render: error.message,
-                type: 'error',
-                ...toastConfig
+                type: "error",
+                ...toastConfig,
             });
         }
     };
 
     const handleSubmitForm = async (data) => {
         if (!executeRecaptcha) {
-            console.log('Execute recaptcha not yet available');
+            console.log("Execute recaptcha not yet available");
             return;
         }
 
-        await executeRecaptcha('submit')
-        .then((recaptchaToken) => {
-            submitForm(data, recaptchaToken);
-        })
-        .catch(error => console.error(`Form - Recaptcha Error : ${error}`));
-    }
+        await executeRecaptcha("submit")
+            .then((recaptchaToken) => {
+                submitForm(data, recaptchaToken);
+            })
+            .catch((error) =>
+                console.error(`Form - Recaptcha Error : ${error}`)
+            );
+    };
 
     return (
         <>
-            <form className={classNames('u-spacing--responsive--bottom', styles['c-form'])} onSubmit={handleSubmit(handleSubmitForm)} noValidate>
+            <form
+                className={classNames(
+                    "u-spacing--responsive--bottom",
+                    styles["c-form"]
+                )}
+                onSubmit={handleSubmit(handleSubmitForm)}
+                noValidate
+            >
                 <div className="o-container--small">
-                    <div className={styles['c-form__inner']}>
-                        <div className={styles['c-form__row']}>
+                    <div className={styles["c-form__inner"]}>
+                        <div className={styles["c-form__row"]}>
                             <TranslateInOut
                                 delay={0.1}
                                 y="100%"
@@ -153,8 +166,8 @@ export default function UploadForm() {
                                     id="firstname"
                                     required={true}
                                     className="c-formElement--bordered"
-                                    register={register('firstname')}
-                                    errors={errors['firstname']}
+                                    register={register("firstname")}
+                                    errors={errors["firstname"]}
                                 />
                             </TranslateInOut>
                             <TranslateInOut
@@ -170,8 +183,8 @@ export default function UploadForm() {
                                     id="lastname"
                                     required={true}
                                     className="c-formElement--bordered"
-                                    register={register('lastname')}
-                                    errors={errors['lastname']}
+                                    register={register("lastname")}
+                                    errors={errors["lastname"]}
                                 />
                             </TranslateInOut>
                             <TranslateInOut
@@ -188,8 +201,8 @@ export default function UploadForm() {
                                     id="email"
                                     required={true}
                                     className="c-formElement--bordered"
-                                    register={register('email')}
-                                    errors={errors['email']}
+                                    register={register("email")}
+                                    errors={errors["email"]}
                                 />
                             </TranslateInOut>
                             <TranslateInOut
@@ -206,8 +219,11 @@ export default function UploadForm() {
                                     id="resume"
                                     required={true}
                                     className="c-formElement--upload--bordered"
-                                    controller={useController({ control, name: 'resume' })}
-                                    errors={errors['resume']}
+                                    controller={useController({
+                                        control,
+                                        name: "resume",
+                                    })}
+                                    errors={errors["resume"]}
                                 />
                             </TranslateInOut>
                             <TranslateInOut
@@ -223,8 +239,11 @@ export default function UploadForm() {
                                     type="file"
                                     id="coverletter"
                                     className="c-formElement--upload--bordered"
-                                    controller={useController({ control, name: 'coverletter' })}
-                                    errors={errors['coverletter']}
+                                    controller={useController({
+                                        control,
+                                        name: "coverletter",
+                                    })}
+                                    errors={errors["coverletter"]}
                                 />
                             </TranslateInOut>
                         </div>
@@ -241,17 +260,14 @@ export default function UploadForm() {
                                 id="message"
                                 required={true}
                                 className="c-formElement--bordered"
-                                register={register('message')}
-                                errors={errors['message']}
+                                register={register("message")}
+                                errors={errors["message"]}
                             />
                         </TranslateInOut>
-                        <FadeInOut
-                            delay={0.25}
-                            watch
-                        >
+                        <FadeInOut delay={0.25} watch>
                             <FormRecaptchaNote />
                         </FadeInOut>
-                        <div className={styles['c-form__btn']}>
+                        <div className={styles["c-form__btn"]}>
                             <ScaleInOut
                                 durationIn={1}
                                 delay={0.25}
@@ -261,7 +277,9 @@ export default function UploadForm() {
                                 <Button
                                     label="Send"
                                     className="c-btn"
-                                    wrapperClassName={classNames({'c-formElement--submit': isSubmitting})}
+                                    wrapperClassName={classNames({
+                                        "c-formElement--submit": isSubmitting,
+                                    })}
                                     type="submit"
                                     disabled={isSubmitting}
                                 />
@@ -270,14 +288,14 @@ export default function UploadForm() {
                     </div>
                 </div>
             </form>
-            {isMounted() &&
+            {isMounted() && (
                 <ToastContainer
                     position={toast.POSITION.BOTTOM_CENTER}
                     transition={Zoom}
                     theme={resolvedTheme}
                     className="c-toastify"
                 />
-            }
+            )}
         </>
     );
 }
