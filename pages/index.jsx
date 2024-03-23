@@ -107,7 +107,7 @@ export default function Home() {
                             >
                                 <Button
                                     label="Challenge Two"
-                                    href="/gsap"
+                                    href="/challenge-two"
                                     className="c-btn"
                                 />
                             </TranslateInOut>
@@ -122,7 +122,7 @@ export default function Home() {
                             >
                                 <Button
                                     label="Challenge Three"
-                                    href="/accordion"
+                                    href="/challenge-three"
                                     className="c-btn"
                                 />
                             </TranslateInOut>
@@ -137,7 +137,7 @@ export default function Home() {
                             >
                                 <Button
                                     label="Challenge Four"
-                                    href="/form"
+                                    href="/challenge-four"
                                     className="c-btn"
                                 />
                             </TranslateInOut>

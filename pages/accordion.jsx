@@ -176,58 +176,6 @@ export default function AccordionPage() {
                     </Accordion>
                 </div>
             </div>
-            <div className="u-spacing--responsive--bottom">
-                <div className="o-container--small">
-                    <ShuffleTextInOut delay={0.3} target="#nested" watch>
-                        <h2 id="nested">Nested accordion</h2>
-                    </ShuffleTextInOut>
-                    <TranslateInOut
-                        overflowHidden
-                        delay={0.4}
-                        y="100%"
-                        start="-100% bottom"
-                        end="top top"
-                        watch
-                    >
-                        <div className="o-wysiwyg">
-                            <p>
-                                <strong>AccordionItem</strong> can have a nested
-                                accordion
-                            </p>
-                        </div>
-                    </TranslateInOut>
-                    <Accordion>
-                        {items.map(({ header }, i) => (
-                            <AccordionItem
-                                header={header}
-                                headingClassName="h6"
-                                id={i}
-                                key={i}
-                                delay={0.3}
-                                start="-100% bottom"
-                                end="top top"
-                                watch
-                            >
-                                <Accordion>
-                                    {items.map(({ header, content }, i) => (
-                                        <AccordionItem
-                                            header={header}
-                                            headingTag={"h4"}
-                                            headingClassName="h6"
-                                            id={i}
-                                            key={i}
-                                        >
-                                            <div className="o-wysiwyg">
-                                                <p>{content}</p>
-                                            </div>
-                                        </AccordionItem>
-                                    ))}
-                                </Accordion>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
-                </div>
-            </div>
         </>
     );
 }
