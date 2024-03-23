@@ -25,14 +25,14 @@ const TEAM = [
         image: "static/linda-two.jpeg",
     },
     {
+        name: "Mahoro Kamali Aurore Melissa 🇷🇼",
+        bio: "I am Mahoro Kamali Aurore Melissa , I am from Rwanda , fun fact about me I like learning how to cook and what I bring to team work and collaboration with the team.....",
+        image: "static/aurore.jpeg",
+    },
+    {
         name: "Manzi Emmanuel 🇷🇼",
         bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
         image: "static/emmanuel-two.jpeg",
-    },
-    {
-        name: "Mahoro Kamali Aurore Melissa 🇷🇼",
-        bio: "I am Mahoro Kamali Aurore Melissa , I am from Rwanda , fun fact about me I like learning how to cook and what I bring to team work and collaboration with the team.....",
-        image: "static/melissa.jpeg",
     },
     {
         name: "Wakhile Zwakele Mzwakhe Dlamini 🇸🇿",
@@ -53,10 +53,10 @@ export default function Home() {
                 title="Dreamville"
                 wysiwyg="A comprehensive presentation of dreamville's e-lab challenges."
                 button={{
-                    label: "Powered by Dreamville",
-                    href: "",
+                    label: "Discover our mission ",
+                    href: "/accordion",
                     isExternal: true,
-                    // externalHref: "https://nextjs.org/",
+
                     anchor: "",
                     onClick: "",
                     className: "c-btn",

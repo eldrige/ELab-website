@@ -12,10 +12,7 @@ export default function ChallengeOne() {
     return (
         <>
             <MetaData title="Challenge three" />
-            <HeaderBasic
-                title="Challenge three"
-                wysiwyg="HELP-LAB"
-            />
+            <HeaderBasic title="Challenge three" wysiwyg="HELP-LAB" />
 
             <div className="u-spacing--responsive--bottom">
                 <div className="o-container--small">
@@ -25,9 +22,12 @@ export default function ChallengeOne() {
                     <TranslateInOut delay={0.4} y="100%">
                         <div className="o-wysiwyg">
                             <p>
-                            For challenge 03, we were to have a HELP-LAB where we get to use our skills to help our community.
-                             For our HELP-LAB the members of the Dreamville team went to Imanzi (a primary and secondary school 
-                             based in Kigali, Rwanda) to teach the Primary 6 students how to use Canva.
+                                For challenge 03, we were to have a HELP-LAB
+                                where we get to use our skills to help our
+                                community. For our HELP-LAB the members of the
+                                Dreamville team went to Imanzi (a primary and
+                                secondary school based in Kigali, Rwanda) to
+                                teach the Primary 6 students how to use Canva.
                             </p>
                         </div>
                     </TranslateInOut>
@@ -47,7 +47,7 @@ export default function ChallengeOne() {
                         >
                             <div className="c-gridSection__item">
                                 <div className="o-wysiwyg">
-                                    <img src="/static/dreamville.jpeg" />
+                                    <img src="/static/imanzi.jpeg" />
                                 </div>
                             </div>
                         </FadeInOut>
@@ -61,7 +61,7 @@ export default function ChallengeOne() {
                         >
                             <div className="c-gridSection__item">
                                 <div className="o-wysiwyg">
-                                    <img src="/static/dreamville-one.jpeg" />
+                                    <img src="/static/imanzi-one.jpeg" />
                                 </div>
                             </div>
                         </TranslateInOut>
@@ -76,7 +76,7 @@ export default function ChallengeOne() {
                                 style={{ display: "flex" }}
                             >
                                 <div className="o-wysiwyg">
-                                    <img src="/static/dreamville-two.jpeg" />
+                                    <img src="/static/imanzi-two.jpeg" />
                                 </div>
                             </div>
                         </ScaleInOut>
@@ -91,7 +91,7 @@ export default function ChallengeOne() {
                                 style={{ display: "flex" }}
                             >
                                 <div className="o-wysiwyg">
-                                    <img src="/static/dreamville-two.jpeg" />
+                                    <img src="/static/imanzi-two.jpeg" />
                                 </div>
                             </div>
                         </ScaleInOut>
@@ -105,7 +105,7 @@ export default function ChallengeOne() {
                         >
                             <div className="c-gridSection__item">
                                 <div className="o-wysiwyg">
-                                    <img src="/static/dreamville-five.jpeg" />
+                                    <img src="/static/iman.jpeg" />
                                 </div>
                             </div>
                         </TranslateInOut>
@@ -117,27 +117,11 @@ export default function ChallengeOne() {
                         >
                             <div className="c-gridSection__item">
                                 <div className="o-wysiwyg">
-                                    <img src="/static/dreamville-six.jpeg" />
+                                    <img src="/static/iman-one.jpeg" />
                                 </div>
                             </div>
                         </FadeInOut>
                     </div>
-                    {/* <div className="c-gridSection__rotate">
-                        <div className="o-wysiwyg">
-                            <img src="/static/dreamville-three.jpeg" />
-                        </div>
-                        <RotateInOut
-                            fade={false}
-                            durationIn={0.6}
-                            rotateTo={360}
-                            start="bottom bottom"
-                            end="top top"
-                            watch
-                            scrub
-                        >
-                            <div className="c-gridSection__rotate--box" />
-                        </RotateInOut>
-                    </div> */}
                 </div>
             </div>
             <div className="u-spacing--responsive--bottom"></div>
