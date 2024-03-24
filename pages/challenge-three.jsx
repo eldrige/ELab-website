@@ -123,6 +123,25 @@ export default function ChallengeOne() {
                         </FadeInOut>
                     </div>
                 </div>
+
+                <div
+                    className="o-container--small"
+                    style={{ marginTop: "4rem" }}
+                >
+                    <ShuffleTextInOut delay={0.3} target="#animations" watch>
+                        <h2 id="animations">Gallery</h2>
+                    </ShuffleTextInOut>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/eOPIuSuY0NM?si=8sNhzhi8D0y9iTSH"
+                        title="Dreamville challenge three video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
             </div>
             <div className="u-spacing--responsive--bottom"></div>
             {/* <div className="u-spacing--responsive--bottom">

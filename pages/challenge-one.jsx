@@ -141,6 +141,18 @@ export default function ChallengeOne() {
                     <ShuffleTextInOut delay={0.3} target="#animations" watch>
                         <h2 id="animations">Video</h2>
                     </ShuffleTextInOut>
+                    <div>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/bsQlAgRN2VE?si=eUqqnODafWWUEMr7"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
                 </div>
             </div>
 

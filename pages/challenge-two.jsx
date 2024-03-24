@@ -12,10 +12,7 @@ export default function ChallengeOne() {
     return (
         <>
             <MetaData title="Challenge two" />
-            <HeaderBasic
-                title="Challenge two"
-                wysiwyg="Discover Africa"
-            />
+            <HeaderBasic title="Challenge two" wysiwyg="Discover Africa" />
 
             <div className="u-spacing--responsive--bottom">
                 <div className="o-container--small">
@@ -25,15 +22,17 @@ export default function ChallengeOne() {
                     <TranslateInOut delay={0.4} y="100%">
                         <div className="o-wysiwyg">
                             <p>
-                            For challenge 02, we were asked to pick an African community 
-                            and make a case study on how our GCGO applies to them. We 
-                            chose Nigeria and explained how we plan to reduce unemployment 
-                            in Nigeria by using agriculture.
+                                For challenge 02, we were asked to pick an
+                                African community and make a case study on how
+                                our GCGO applies to them. We chose Nigeria and
+                                explained how we plan to reduce unemployment in
+                                Nigeria by using agriculture.
                             </p>
                             <p>
-                            In this video, we highlight the community we are focusing on which
-                             is Nigeria and we also mention how we plan to use agriculture to 
-                             reduce the number of unemployed people in Nigeria.
+                                In this video, we highlight the community we are
+                                focusing on which is Nigeria and we also mention
+                                how we plan to use agriculture to reduce the
+                                number of unemployed people in Nigeria.
                             </p>
                         </div>
                     </TranslateInOut>
@@ -144,6 +143,27 @@ export default function ChallengeOne() {
                             <div className="c-gridSection__rotate--box" />
                         </RotateInOut>
                     </div> */}
+                </div>
+
+                <div
+                    className="o-container--small"
+                    style={{ marginTop: "4rem" }}
+                >
+                    <ShuffleTextInOut delay={0.3} target="#animations" watch>
+                        <h2 id="animations">Video</h2>
+                    </ShuffleTextInOut>
+                    <div>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/srPXuw4bDzE?si=Kkb0yKpwbhjziweR"
+                            title="Dreamville challenge two video"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
                 </div>
             </div>
             <div className="u-spacing--responsive--bottom"></div>
