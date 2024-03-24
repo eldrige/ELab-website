@@ -105,5 +105,5 @@ export default function ShuffleTextInOut({
     //     return () => ctx.revert();
     // }, []);
 
-    return <div style={{ opacity: fade ? 0 : 1 }}>{children}</div>;
+    return <div>{children}</div>;
 }

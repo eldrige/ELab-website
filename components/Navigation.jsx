@@ -42,8 +42,8 @@ export default function Navigation() {
                                 Dreamville
                             </Link>
                         </div>
-                        <MobileNavigation />
-                        <nav className={styles["c-navigation__nav"]}>
+                        {/* <MobileNavigation /> */}
+                        {/* <nav className={styles["c-navigation__nav"]}>
                             <div
                                 className={styles["c-navigation__nav__primary"]}
                             >
@@ -114,7 +114,7 @@ export default function Navigation() {
                                     </ul>
                                 </div>
                             </div>
-                        </nav>
+                        </nav> */}
                         <div className={styles["c-navigation__switch"]}>
                             {isMounted() && (
                                 <DarkModeSwitch

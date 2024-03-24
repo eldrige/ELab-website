@@ -22,7 +22,7 @@ export default function ChallengeOne() {
                     <TranslateInOut delay={0.4} y="100%">
                         <div className="o-wysiwyg">
                             <p>
-                                FFor challenge 04, we were instructed to find a
+                                For challenge 04, we were instructed to find a
                                 project/start-up company/institution that falls
                                 in line with our GCGO. After searching via
                                 LinkedIn we came across Umurava, which is a tech

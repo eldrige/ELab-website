@@ -140,7 +140,7 @@ export default function Home() {
                                 />
                             </TranslateInOut>
                         </div>
-                        <div className="c-flexSection__item">
+                        {/* <div className="c-flexSection__item">
                             <TranslateInOut
                                 delay={1.05}
                                 y="100%"
@@ -154,7 +154,7 @@ export default function Home() {
                                     className="c-btn"
                                 />
                             </TranslateInOut>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>

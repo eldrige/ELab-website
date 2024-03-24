@@ -26,19 +26,14 @@ const solution = [
 export default function AccordionPage() {
     const items = [
         {
-            header: "Why this problem statement?",
+            header: "Why choose unemployment as a grand challenge?",
             content:
-                "Upon formation of our think-thanks we realized one of our members had a problem, her parents had not been employed for over 10 years",
+                "Based on the personal experience of one of our members, who hails from Nigeria and has witnessed the unemployment struggles faced by their own parents, we are driven to address this pressing issue",
         },
         {
-            header: "Where does it come from?",
+            header: "Why choose agriculture as a grand opportunity?",
             content:
-                "Suspendisse amet consectetur adipisicing elit. Eius consequatur quisquam voluptatem ea maxime ut est. Auctor elit sed vulputate mi sit amet. Interdum consectetur libero id faucibus. Vel pharetra vel turpis nunc eget lorem dolor sed viverra. Sed odio morbi quis commodo odio aenean sed adipiscing diam. Interdum velit laoreet id donec. At varius vel pharetra vel turpis. Urna cursus eget nunc scelerisque viverra mauris in aliquam sem. Sit amet venenatis urna cursus. Volutpat ac tincidunt vitae semper quis. Id diam maecenas ultricies mi eget. Risus feugiat in ante metus dictum at. Vel fringilla est ullamcorper eget nulla facilisi. Non consectetur a erat nam at lectus urna duis. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Placerat vestibulum lectus mauris ultrices eros in. Quam nulla porttitor massa id neque. Suspendisse faucibus interdum posuere lorem ipsum. Pharetra vel turpis nunc eget lorem dolor sed viverra. Dui sapien eget mi proin. Id nibh tortor id aliquet.",
-        },
-        {
-            header: "Why do we use it?",
-            content:
-                "Quisque eget luctus mi, vehicula mollis lorem amet consectetur adipisicing elit. Eius consequatur quisquam voluptatem ea maxime ut est...Lectus sit amet est placerat. Risus ultricies tristique nulla aliquet enim tortor at auctor urna. Interdum velit laoreet id donec ultrices tincidunt arcu non. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Platea dictumst quisque sagittis purus sit amet. Adipiscing tristique risus nec feugiat in. Pellentesque elit ullamcorper dignissim cras. Nunc sed id semper risus in hendrerit. Orci a scelerisque purus semper eget duis at tellus. Eget arcu dictum varius duis at consectetur. Nunc pulvinar sapien et ligula ullamcorper malesuada.",
+                "Agriculture is well-suited for addressing unemployment in Nigeria due to abundant arable land, diverse agricultural practices, high population and food demand, economic significance, potential for agribusiness, and the capacity to provide sustainable livelihoods. By leveraging these factors, agriculture offers employment opportunities, fosters economic growth, and contributes to food security, making it an ideal solution to combat unemployment and improve livelihoods in Nigeria.",
         },
     ];
 
@@ -54,11 +49,17 @@ export default function AccordionPage() {
                     <TranslateInOut overflowHidden delay={0.4} y="100%">
                         <div className="o-wysiwyg">
                             <p>
-                                According to statista the total number of
-                                unemployed people in Nigeria totals 6.3 million.
-                                We intend to use agriculture to train people
-                                aged 20 to 60 to practice livesotck and cashcrop
-                                farming in order to earn a living and income
+                                In Nigeria, where the total number of unemployed
+                                people stands at 6.3 million according to
+                                Statista, there is a pressing need to address
+                                this issue and provide sustainable income
+                                opportunities. Our initiative aims to leverage
+                                the potential of agriculture by providing
+                                training in livestock and cash crop farming to
+                                individuals aged 20 to 60. By equipping them
+                                with the necessary skills, we empower unemployed
+                                individuals to earn a living and improve their
+                                livelihoods through agricultural practices.
                             </p>
                         </div>
                     </TranslateInOut>
@@ -95,15 +96,15 @@ export default function AccordionPage() {
                     >
                         <div className="o-wysiwyg">
                             <p>
-                                Our mission is to catalyze sustainable job
-                                creation through agriculture in Lagos, Nigeria,
-                                by fostering innovation, skills development, and
-                                entrepreneurship in the agricultural sector.
-                                Through strategic partnerships and community
-                                engagement, we aim to unlock the potential of
-                                agriculture to provide meaningful employment
-                                opportunities, drive economic growth, and
-                                enhance livelihoods across the region.
+                                Our mission is to drive sustainable job creation
+                                in Lagos, Nigeria, by promoting innovation,
+                                skill development, and entrepreneurship in the
+                                agricultural sector. Through strategic
+                                partnerships and active community engagement, we
+                                aim to unlock the full potential of agriculture,
+                                harnessing its power to generate meaningful
+                                employment, foster economic growth, and uplift
+                                livelihoods throughout the region.
                             </p>
                         </div>
                     </TranslateInOut>

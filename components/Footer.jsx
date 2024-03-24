@@ -45,29 +45,15 @@ export default function Footer() {
                         <ul className="unstyled">
                             <li>
                                 <NavItem
-                                    href="/gsap"
-                                    title="Gsap"
+                                    href="https://www.instagram.com/dreamville_alu?igsh=aG5zZm56NDNuN2Rs"
+                                    title="Instragram"
                                     className={styles["is-current-page"]}
                                 />
                             </li>
                             <li>
                                 <NavItem
-                                    href="/accordion"
-                                    title="Accordion"
-                                    className={styles["is-current-page"]}
-                                />
-                            </li>
-                            <li>
-                                <NavItem
-                                    href="/form"
-                                    title="Form"
-                                    className={styles["is-current-page"]}
-                                />
-                            </li>
-                            <li>
-                                <NavItem
-                                    href="/upload"
-                                    title="File upload form"
+                                    href="https://youtube.com/@Dreamville_346?si=jZvJERLoivV33yKn"
+                                    title="Youtube"
                                     className={styles["is-current-page"]}
                                 />
                             </li>

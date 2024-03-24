@@ -12,10 +12,7 @@ export default function ChallengeOne() {
     return (
         <>
             <MetaData title="Challenge One" />
-            <HeaderBasic
-                title="Challenge one"
-                wysiwyg="Discover each dreamville team member in depth."
-            />
+            <HeaderBasic title="Challenge one" wysiwyg="Introduction." />
 
             <div className="u-spacing--responsive--bottom">
                 <div className="o-container--small">

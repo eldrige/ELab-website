@@ -91,7 +91,7 @@ export default function ChallengeOne() {
                                 style={{ display: "flex" }}
                             >
                                 <div className="o-wysiwyg">
-                                    <img src="/static/imanzi-two.jpeg" />
+                                    <img src="/static/imanzi-three.jpeg" />
                                 </div>
                             </div>
                         </ScaleInOut>
