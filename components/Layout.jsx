@@ -1,6 +1,6 @@
-import TransitionLayout from './TransitionLayout';
-import Navigation from './Navigation';
-import Footer from './Footer';
+import TransitionLayout from "./TransitionLayout";
+import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
     return (
