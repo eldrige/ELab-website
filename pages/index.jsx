@@ -31,7 +31,7 @@ const TEAM = [
     },
     {
         name: "Manzi Emmanuel 🇷🇼",
-        bio: "I enjoy sports, particularly dancing, and I am passionate about helping others. I bring a positive perspective to my team, contributing to a collaborative and supportive environment.....",
+        bio: "Im about leadership and innovation. I have a passion for innovation and leadership. I bring my leadership skills to the team.....",
         image: "static/emmanuel-two.jpeg",
     },
     {
