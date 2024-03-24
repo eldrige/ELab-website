@@ -140,6 +140,21 @@ export default function Home() {
                                 />
                             </TranslateInOut>
                         </div>
+                        <div className="c-flexSection__item">
+                            <TranslateInOut
+                                delay={0.85}
+                                y="100%"
+                                start="-100% bottom"
+                                end="top top"
+                                watch
+                            >
+                                <Button
+                                    label="Challenge Five"
+                                    href="/challenge-five"
+                                    className="c-btn"
+                                />
+                            </TranslateInOut>
+                        </div>
                         {/* <div className="c-flexSection__item">
                             <TranslateInOut
                                 delay={1.05}

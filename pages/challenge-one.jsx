@@ -27,52 +27,6 @@ export default function ChallengeOne() {
                                 stating our name, country, interest and a fun
                                 fact about you.
                             </p>
-                            <p>
-                                Each animation component has built in
-                                flexibility for different scenarios:
-                            </p>
-                            <ul>
-                                <li>
-                                    Setting different durations and delays for
-                                    intros and outros
-                                </li>
-                                <li>
-                                    You can easily overwrite the default ease in
-                                    any animation by setting the ease prop. Use
-                                    the{" "}
-                                    <a
-                                        href="https://greensock.com/docs/v3/Eases"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        GreenSock Ease Visualizer
-                                    </a>{" "}
-                                    to help you choose exactly the type of
-                                    easing that you need
-                                </li>
-                                <li>Skipping the outro animation</li>
-                                <li>
-                                    Creating scroll interactions and animate
-                                    your component with{" "}
-                                    <a
-                                        href="https://greensock.com/docs/v3/Plugins/ScrollTrigger"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        GSAP ScrollTrigger
-                                    </a>{" "}
-                                    by setting the watch prop to true (default:
-                                    false). Determining the start and end
-                                    position of the ScrollTrigger with start
-                                    (default: 'top bottom') and end (default:
-                                    'bottom top') prop
-                                </li>
-                                <li>
-                                    Setting markers prop to true during
-                                    development allows you to see exactly where
-                                    the start/end/trigger points are
-                                </li>
-                            </ul>
                         </div>
                     </TranslateInOut>
                 </div>
@@ -165,12 +119,8 @@ export default function ChallengeOne() {
                                 </div>
                             </div>
                         </FadeInOut>
-                    </div>
-                    {/* <div className="c-gridSection__rotate">
-                        <div className="o-wysiwyg">
-                            <img src="/static/dreamville-three.jpeg" />
-                        </div>
-                        <RotateInOut
+
+                        {/* <RotateInOut
                             fade={false}
                             durationIn={0.6}
                             rotateTo={360}
@@ -180,117 +130,21 @@ export default function ChallengeOne() {
                             scrub
                         >
                             <div className="c-gridSection__rotate--box" />
-                        </RotateInOut>
-                    </div> */}
+                        </RotateInOut> */}
+                    </div>
+                </div>
+
+                <div
+                    className="o-container--small"
+                    style={{ marginTop: "4rem" }}
+                >
+                    <ShuffleTextInOut delay={0.3} target="#animations" watch>
+                        <h2 id="animations">Video</h2>
+                    </ShuffleTextInOut>
                 </div>
             </div>
+
             <div className="u-spacing--responsive--bottom"></div>
-            {/* <div className="u-spacing--responsive--bottom">
-                <div className="o-container--small">
-                    <ShuffleTextInOut
-                        delay={0.3}
-                        target="#custom-animations"
-                        watch
-                    >
-                        <h2 id="custom-animations">Custom animations</h2>
-                    </ShuffleTextInOut>
-                    <div className="c-rotateInOut3D">
-                        <div className="o-wysiwyg">
-                            <h3 className="h5">RotateInOut3D</h3>
-                            <p>
-                                durationIn="1 + Math.random()"
-                                <br />
-                                y="100px"
-                                <br />
-                                start="-100px bottom"
-                                <br />
-                                watch
-                            </p>
-                        </div>
-                        <div className="c-rotateInOut3D__row u-spacing--responsive--bottom">
-                            <RotateInOut3D
-                                durationIn={1 + Math.random()}
-                                y="100px"
-                                start="-100px bottom"
-                                watch
-                            >
-                                <div className="c-rotateInOut3D__item c-rotateInOut3D__item--1" />
-                            </RotateInOut3D>
-                            <RotateInOut3D
-                                durationIn={1 + Math.random()}
-                                y="100px"
-                                start="-100px bottom"
-                                watch
-                            >
-                                <div className="c-rotateInOut3D__item c-rotateInOut3D__item--2" />
-                            </RotateInOut3D>
-                            <RotateInOut3D
-                                durationIn={1 + Math.random()}
-                                y="100px"
-                                start="-100px bottom"
-                                watch
-                            >
-                                <div className="c-rotateInOut3D__item c-rotateInOut3D__item--3" />
-                            </RotateInOut3D>
-                            <RotateInOut3D
-                                durationIn={1 + Math.random()}
-                                y="100px"
-                                start="-100px bottom"
-                                watch
-                            >
-                                <div className="c-rotateInOut3D__item c-rotateInOut3D__item--4" />
-                            </RotateInOut3D>
-                            <RotateInOut3D
-                                durationIn={1 + Math.random()}
-                                y="100px"
-                                start="-100px bottom"
-                                watch
-                            >
-                                <div className="c-rotateInOut3D__item c-rotateInOut3D__item--5" />
-                            </RotateInOut3D>
-                        </div>
-                    </div>
-                    <div className="o-wysiwyg">
-                        <h3 className="h5">ImplodeExplodeInOut</h3>
-                        <p>
-                            delay="0.5"
-                            <br />
-                            target="#implode-explode"
-                            <br />
-                            watch
-                        </p>
-                    </div>
-                    <div className="u-spacing--responsive">
-                        <ImplodeExplodeInOut
-                            delay={0.5}
-                            target="#implode-explode"
-                            watch
-                        >
-                            <h2 className="u-margin--none" id="implode-explode">
-                                Build complex animations and page transitions
-                                with GSAP and Next.js
-                            </h2>
-                        </ImplodeExplodeInOut>
-                    </div>
-                    <div className="o-wysiwyg">
-                        <h3 className="h5">ShuffleTextInOut</h3>
-                        <p>
-                            delay="0.3"
-                            <br />
-                            target="#shuffle"
-                            <br />
-                            watch
-                        </p>
-                    </div>
-                    <div className="u-spacing--responsive--top">
-                        <ShuffleTextInOut delay={0.3} target="#shuffle" watch>
-                            <h2 className="u-margin--none" id="shuffle">
-                                GreenSock
-                            </h2>
-                        </ShuffleTextInOut>
-                    </div>
-                </div>
-            </div> */}
         </>
     );
 }
